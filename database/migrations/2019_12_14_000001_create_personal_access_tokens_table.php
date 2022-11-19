@@ -20,6 +20,10 @@ return new class extends Migration
             $table->string('token', 64)->unique();
             $table->text('abilities')->nullable();
             $table->timestamp('last_used_at')->nullable();
+<<<<<<< HEAD
+=======
+            $table->timestamp('expires_at')->nullable();
+>>>>>>> 5fee6ab78cd136203ac9d90d323c0bce7acb868d
             $table->timestamps();
         });
     }
