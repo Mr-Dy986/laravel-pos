@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
-            $table->id();
-            $table->string('key')->unique();
-            $table->text('value')->nullable();
-            $table->timestamps();
+        Schema::table('shoppingcarts', function (Blueprint $table) {
+            $table->integer('status')->default(0);
+            $table->string('payment_id')->nullable();
         });
     }
 
@@ -28,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settings');
+        Schema::table('shippingcarts', function (Blueprint $table) {
+            //
+        });
     }
 };
